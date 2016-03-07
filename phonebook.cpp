@@ -1,4 +1,5 @@
 ﻿#include<phonebook.h>
+#include<iostream>
 #include<algorithm>
 
 
@@ -50,9 +51,10 @@ int peopleOfPhoneBook(){
 void showPhoneBook(){
 	vector<Person>::iterator it;
 	for(it=people.begin();it!=people.end();it++){
-		cout<<"Name : "<<*it.name<<endl;
+		cout<<*it;
+		/*cout<<"Name : "<<*it.name<<endl;
 		cout<<"Phone : "<<*it.phone<<endl;
-		cout<<"Memo : "<<*it.memo<<"\n"<<endl;
+		cout<<"Memo : "<<*it.memo<<"\n"<<endl;*/
 	}
 }
 
