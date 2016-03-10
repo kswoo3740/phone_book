@@ -12,17 +12,17 @@ private:
 	string* sender;
 	string* receiver;
 	string* content;
-	int date;
+	string* date;
 public:
-	Message(const string&, const string&, const string&, const int);
+	Message(const string&, const string&, const string&, const string&);
 	Message(const Message&);
 	~Message();
 
 	bool operator<(const Message&, const Message&);
 
-	ifstream& operator>>(ifstream&, Message&);
-	ofstream& operator<<(ofstream&, const Message&);
-	ostream& operator<<(ostream&, const Message&);
+	friend ifstream& operator>>(ifstream&, Message&);
+	friend ofstream& operator<<(ofstream&, const Message&);
+	friend ostream& operator<<(ostream&, const Message&);
 }
 
 #endif

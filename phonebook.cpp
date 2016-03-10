@@ -62,24 +62,23 @@ void showPhoneBook(){
 Person findName(const string& fName){
 	vector<Person>::iterator it;
 	PhoneBook sameName;
-	int i=1;
 	for(it=people.begin();it!=people.end();it++){
 		if(*it.name==fName){
 			sameName.push_back(*it);
-			i++
 		}
 	}
 	if(sameName.size()==1) return sameName[1];			//해당 이름을 가진 사람이 1사람만 존재할 경우
 	else if(sameName.size()==0) return Person("None","None","None");			//해당 이름을 가진 사람이 존재하지 않을 경우
 	else{
+		int i=sameName.size()-1;
 		cout<<"Choose the person's number who you are looking for"
-		for(int j=1;j<=i;j++){
-			cout<<j<<"."<<endl;
+		for(int j=0;j<=i;j++){
+			cout<<j+1<<"."<<endl;
 			cout<<sameName[j];
 		}
 		int k;
 		cin>>k;
-		return sameName[k];			//이름이 같은 사람이 여럿 존재할 경우
+		return sameName[k-1];			//이름이 같은 사람이 여럿 존재할 경우
 	}
 
 }

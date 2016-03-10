@@ -66,8 +66,7 @@ ofstream& Person::operator<<(ofstream& fout, const Person& per){
 }
 
 //각각의 변수 출력
-ostream& Person::operator<<(const Person& per){
-	ostream& sout;
+ostream& Person::operator<<(ostream& sout, const Person& per){
 	sout<<"Name : "<<per.name<<endl;
 	sout<<"Phonenumber : "<<per.phone<<endl;
 	sout<<"Memo : "<<per.memo<<endl;
@@ -94,5 +93,5 @@ bool Person::operator==(const Person& per){
 bool Person::operator<(const Person& fPer,const Person& sPer){
 	if(*fPer.name != *sPer.name) return *fPer.name < *sPer.name;
 	if(*fPer.phone != *sPer.phone) return *fPer.phone < *sPer.phone;
-	else return false;
+	else return true;
 }

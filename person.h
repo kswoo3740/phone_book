@@ -22,10 +22,10 @@ public:
 	void setPhone(const string& phone);
 	void setMemo(const string& memo);
 	
-	ifstream& operator>>(ifstream&, Person&);
-	ofstream& operator<<(ofstream&, const Person&);
-	ostream& operator<<(ostream&, const Person&):
-	Person& operator=(const Person&);
+	friend ifstream& operator>>(ifstream&, Person&);
+	friend ofstream& operator<<(ofstream&, const Person&);
+	friend ostream& operator<<(ostream&, const Person&):
+	friend Person& operator=(const Person&);
 	bool operator==(const Person&);
 	bool operator<(const Person&, const Person&);
 }

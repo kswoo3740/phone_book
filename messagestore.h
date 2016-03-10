@@ -11,7 +11,7 @@ using namespace std;
 
 class MessageStore {
 private:
-	vector<Message> sms; 
+	vector<Message> messages; 
 public:
 	void readFile(const string&);
 	void saveFile(const string&);
